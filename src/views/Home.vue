@@ -1,7 +1,12 @@
 <template>
   <div class="home">
     <div class="nav">
-      <router-link to="/create-item" class="nav__link">Add Item</router-link>
+      <router-link
+        to="/create-item"
+        class="nav__link"
+      >
+        Add Item
+      </router-link>
       <div class="nav-check">
         <input
           id="disabled"
@@ -9,7 +14,12 @@
           v-model="enabled"
           class="nav-check__input"
         />
-        <label class="nav-check__label" for="disabled">DnD enabled</label>
+        <label
+          class="nav-check__label"
+          for="disabled"
+        >
+          DnD enabled
+        </label>
       </div>
     </div>
     <div class="items-wrapper">

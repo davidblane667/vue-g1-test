@@ -38,7 +38,7 @@ export default new Vuex.Store({
         return state.items
       }
     },
-    ADD_ITEM({state ,commit}, item) {
+    ADD_ITEM({state, commit}, item) {
       commit('SET_ITEM', item)
       addLocalStorageDate(state.items)
     },
@@ -52,6 +52,6 @@ export default new Vuex.Store({
 })
 
 function addLocalStorageDate(data) {
-  const parsed = JSON.stringify(data);
+  const parsed = JSON.stringify(data)
   localStorage.setItem('items', parsed)
 }

@@ -1,24 +1,32 @@
 <template>
-  <div class="item" @click="$emit('open', index)">
+  <div class="item" @click="openHandler">
     <h2 class="item__title">{{item.title}}</h2>
     <p class="item__descr">{{item.description}}</p>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'item',
-  props: {
-    item: {
-      type: Object,
-      default: () => {{}}
+  export default {
+    name: 'item',
+    props: {
+      item: {
+        type: Object,
+        default: () => {
+          {
+          }
+        }
+      },
+      index: {
+        type: Number,
+        required: true
+      }
     },
-    index: {
-      type: Number,
-      required: true
+    methods: {
+      openHandler() {
+        this.$emit('open', this.index)
+      }
     }
   }
-}
 </script>
 
 <style>

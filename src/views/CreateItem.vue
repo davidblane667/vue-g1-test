@@ -1,5 +1,8 @@
 <template>
-  <form class="form" @submit.prevent="submitHandler">
+  <form
+    class="form"
+    @submit.prevent="submitHandler"
+  >
     <div class="form-row">
       <label class="form-row__label">Enter title:</label>
       <input
@@ -41,14 +44,14 @@
     name: 'create-item',
     data: () => ({
       title: '',
-      description: '',
+      description: ''
     }),
     validations: {
       title: {
-        required,
+        required
       },
       description: {
-        required,
+        required
       }
     },
     methods: {
@@ -69,7 +72,7 @@
       },
       invalidDescr() {
         return (this.$v.description.$dirty && !this.$v.description.required)
-      },
+      }
     }
   }
 </script>

@@ -1,51 +1,57 @@
 <template>
-    <transition name="modal">
-      <div class="modal-mask">
-        <div class="modal-wrapper">
-          <div class="modal-container">
+  <transition name="modal">
+    <div class="modal-mask">
+      <div class="modal-wrapper">
+        <div class="modal-container">
 
-            <div class="modal-header">
-              <slot name="header">
-                <span class="modal__descr">Title: </span>
-                <h3 class="modal-header__title">{{item.title}}</h3>
-              </slot>
-            </div>
+          <div class="modal-header">
+            <slot name="header">
+              <span class="modal__descr">Title: </span>
+              <h3 class="modal-header__title">{{item.title}}</h3>
+            </slot>
+          </div>
 
-            <div class="modal-body">
-              <slot name="body">
-                <span class="modal__descr">Description: </span>
-                <p class="modal-body__descr">{{item.description}}</p>
-              </slot>
-            </div>
+          <div class="modal-body">
+            <slot name="body">
+              <span class="modal__descr">Description: </span>
+              <p class="modal-body__descr">{{item.description}}</p>
+            </slot>
+          </div>
 
-            <div class="modal-footer">
-              <slot name="footer">
-                <button class="modal-default-button" @click="closeHandler">
-                  Close
-                </button>
-              </slot>
-            </div>
+          <div class="modal-footer">
+            <slot name="footer">
+              <button
+                class="modal-default-button"
+                @click="closeHandler"
+              >
+                Close
+              </button>
+            </slot>
           </div>
         </div>
       </div>
-    </transition>
+    </div>
+  </transition>
 </template>
 
 <script>
-export default {
-  name: 'modal',
-  props: {
-    item: {
-      type: Object,
-      default: () => {{}}
-    }
-  },
-  methods: {
-    closeHandler() {
-      this.$emit('close')
+  export default {
+    name: 'modal',
+    props: {
+      item: {
+        type: Object,
+        default: () => {
+          {
+          }
+        }
+      }
+    },
+    methods: {
+      closeHandler() {
+        this.$emit('close')
+      }
     }
   }
-}
 </script>
 
 <style>
